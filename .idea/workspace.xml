@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443a09e0-79ab-4194-a513-0cae6ef5373a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/fonts/helvetiker_regular.typeface.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/models/wordsphere.glb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.alt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/descriptors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/models/wordsphere2.glb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.alt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.alt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/descriptors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/descriptors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +94,7 @@
       <workItem from="1754332514485" duration="648000" />
       <workItem from="1754542496861" duration="260000" />
       <workItem from="1754542793891" duration="7671000" />
-      <workItem from="1754695742841" duration="18684000" />
+      <workItem from="1754695742841" duration="24199000" />
     </task>
     <servers />
   </component>

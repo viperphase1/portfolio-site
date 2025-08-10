@@ -18,6 +18,7 @@ import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 const Home = () => {
   const canvasRef = useRef(null);
   const [scene, setScene] = useState(new Scene());
+  const shouldAutoRotate = useRef(true);
 
   function exportScene() {
     const exporter = new GLTFExporter();
@@ -83,7 +84,7 @@ const Home = () => {
             font: font,
             size: 0.5,
             height: 0.2,
-            depth: 0.08,
+            depth: 0,
             curveSegments: 6,
           });
 
@@ -119,6 +120,7 @@ const Home = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
         const orbitControls = new OrbitControls(camera, renderer.domElement);
         camera.position.set(0, 0, 25);
+        orbitControls.autoRotate = true;
         orbitControls.update();
 
         let startTime;
@@ -137,6 +139,10 @@ const Home = () => {
             tween(t);
           }
 
+          if (orbitControls.autoRotate) {
+            orbitControls.update();
+          }
+
           requestAnimationFrame( animate );
 
           renderer.render( scene, camera );
@@ -144,6 +150,11 @@ const Home = () => {
         }
 
         animate();
+
+        const stopAutoRotate = () => orbitControls.autoRotate = false;
+        window.addEventListener('mousedown', stopAutoRotate);
+        window.addEventListener('wheel', stopAutoRotate);
+        window.addEventListener('touchstart', stopAutoRotate);
 
         window.addEventListener('resize', () => {
           camera.aspect = window.innerWidth / window.innerHeight;
@@ -153,7 +164,6 @@ const Home = () => {
 
       });
 
-      console.log(scene);
     }
   }, [canvasRef, scene])
 

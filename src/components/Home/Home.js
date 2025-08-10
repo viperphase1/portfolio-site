@@ -10,45 +10,14 @@ import {
 } from 'three';
 import {OrbitControls} from "three/addons";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 
 const Home = () => {
   const canvasRef = useRef(null);
-  const [scene, setScene] = useState(new Scene());
-
-  function exportScene() {
-    const exporter = new GLTFExporter();
-
-    exporter.parse(
-      scene,
-      function (result) {
-        if (result instanceof ArrayBuffer) {
-          saveArrayBuffer(result, 'scene.glb');
-        } else {
-          saveString(JSON.stringify(result), 'scene.gltf');
-        }
-      }, null,
-      { binary: true } // change to true if you want .glb instead of .gltf
-    );
-  }
-
-  function saveString(text, filename) {
-    saveBlob(new Blob([text], { type: 'text/plain' }), filename);
-  }
-
-  function saveArrayBuffer(buffer, filename) {
-    saveBlob(new Blob([buffer], { type: 'application/octet-stream' }), filename);
-  }
-
-  function saveBlob(blob, filename) {
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = filename;
-    link.click();
-  }
+  const shouldAutoRotate = useRef(true);
 
   useEffect(() => {
-      if (canvasRef && scene) {
+      if (canvasRef.current) {
+        const scene = new Scene();
         const ambientLight = new AmbientLight(0xffffff, 0.5);
         const directionalLight = new DirectionalLight(0xffffff, 0.5);
         scene.add(ambientLight);
@@ -58,7 +27,7 @@ const Home = () => {
         const explodeDuration = 400;
 
         const loader = new GLTFLoader();
-        loader.load('/models/wordsphere.glb', (gltf) => {
+        loader.load('/models/wordsphere2.glb', (gltf) => {
           // Assuming gltf.scene contains your loaded sphere group
           const loadedGroup = gltf.scene;
           loadedGroup.scale.copy(initialScale);
@@ -83,6 +52,10 @@ const Home = () => {
 
               t = 1 - Math.pow(1 - t, 3); // cubic ease-out
 
+              if (shouldAutoRotate.current) {
+                loadedGroup.rotation.y += 0.002;
+              }
+
               loadedGroup.scale.copy(initialScale.clone().lerp(new Vector3(1,1,1), t))
             }
 
@@ -94,6 +67,11 @@ const Home = () => {
 
           animate();
 
+          const stopAutoRotate = () => shouldAutoRotate.current = false;
+          window.addEventListener('mousedown', stopAutoRotate);
+          window.addEventListener('wheel', stopAutoRotate);
+          window.addEventListener('touchstart', stopAutoRotate);
+
           window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
@@ -102,14 +80,12 @@ const Home = () => {
 
         });
 
-        console.log(scene);
       }
-  }, [canvasRef, scene])
+  }, [canvasRef])
 
   return (
     <div className={styles.Home}>
       <canvas ref={canvasRef}></canvas>
-      {/*<button onClick={exportScene}>Export</button>*/}
     </div>
   );
 };
