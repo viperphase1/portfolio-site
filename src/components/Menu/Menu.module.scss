@@ -1,0 +1,99 @@
+@import '../../mixins.scss';
+
+.Menu {
+  position: absolute;
+  top:36px;
+  right:36px;
+  > .inner {
+    width:60px;
+    height:60px;
+    overflow:hidden;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+    clip-path: circle(50%);
+    > * {
+      position:absolute;
+      top:50%;
+      left:50%;
+    }
+    .circle {
+      transition: all 0.3s;
+      clip-path: circle(50%);
+      transform: translate(-50%, -50%);
+      cursor:pointer;
+      overflow:hidden;
+      width:58px;
+      height:58px;
+    }
+    .trigger {
+      width:60px;
+      height:60px;
+      background-color: var(--primary);
+      color:var(--light-neutral);
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      z-index:5;
+      > * {
+        position:absolute;
+      }
+    }
+    .circle1 {
+      background-color: var(--accent1);
+      z-index:4;
+      &:hover {
+        @include tint;
+      }
+    }
+    .circle2 {
+      background-color: var(--accent2);
+      z-index:3;
+      &:hover {
+        @include tint;
+      }
+    }
+    .circle3 {
+      background-color: var(--accent3);
+      z-index:2;
+      &:hover {
+        @include tint;
+      }
+    }
+    .circle4 {
+      background-color: var(--accent4);
+      z-index:1;
+      &:hover {
+        @include tint;
+      }
+    }
+  }
+  &.active {
+    > .inner {
+      width:546px;
+      height:546px;
+      .trigger {
+        background-color: var(--light-neutral);
+        color:var(--primary);
+      }
+      .circle1 {
+        width:180px;
+        height:180px;
+      }
+      .circle2 {
+        width:302px;
+        height:302px;
+      }
+      .circle3 {
+        width:422px;
+        height:422px;
+      }
+      .circle4 {
+        width:546px;
+        height:546px;
+      }
+    }
+  }
+}
