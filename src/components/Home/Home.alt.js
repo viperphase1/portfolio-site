@@ -121,6 +121,7 @@ const Home = () => {
         const orbitControls = new OrbitControls(camera, renderer.domElement);
         camera.position.set(0, 0, 25);
         orbitControls.autoRotate = true;
+        orbitControls.enableDamping = true;
         orbitControls.update();
 
         let startTime;
@@ -139,7 +140,7 @@ const Home = () => {
             tween(t);
           }
 
-          if (orbitControls.autoRotate) {
+          if (orbitControls.autoRotate || orbitControls.enableDamping) {
             orbitControls.update();
           }
 

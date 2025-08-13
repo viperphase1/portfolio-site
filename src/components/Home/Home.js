@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import styles from './Home.module.scss';
 import {
   AmbientLight,
@@ -13,7 +13,6 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const Home = () => {
   const canvasRef = useRef(null);
-  const shouldAutoRotate = useRef(true);
 
   useEffect(() => {
       if (canvasRef.current) {
@@ -37,6 +36,8 @@ const Home = () => {
           renderer.setSize(window.innerWidth, window.innerHeight);
           const orbitControls = new OrbitControls(camera, renderer.domElement);
           camera.position.set(0, 0, 25);
+          orbitControls.autoRotate = true;
+          orbitControls.enableDamping = true;
           orbitControls.update();
 
           let startTime;
@@ -52,11 +53,11 @@ const Home = () => {
 
               t = 1 - Math.pow(1 - t, 3); // cubic ease-out
 
-              if (shouldAutoRotate.current) {
-                loadedGroup.rotation.y += 0.002;
-              }
-
               loadedGroup.scale.copy(initialScale.clone().lerp(new Vector3(1,1,1), t))
+            }
+
+            if (orbitControls.autoRotate || orbitControls.enableDamping) {
+              orbitControls.update();
             }
 
             requestAnimationFrame( animate );
@@ -67,7 +68,7 @@ const Home = () => {
 
           animate();
 
-          const stopAutoRotate = () => shouldAutoRotate.current = false;
+          const stopAutoRotate = () => orbitControls.autoRotate = false;
           window.addEventListener('mousedown', stopAutoRotate);
           window.addEventListener('wheel', stopAutoRotate);
           window.addEventListener('touchstart', stopAutoRotate);
