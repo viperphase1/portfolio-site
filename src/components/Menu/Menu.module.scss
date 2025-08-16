@@ -2,8 +2,9 @@
 
 .Menu {
   position: absolute;
-  top:36px;
-  right:36px;
+  top:50px;
+  right:50px;
+  z-index:10;
   > .inner {
     width:60px;
     height:60px;

@@ -1,25 +1,36 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './Menu.module.scss';
 import TextRing from "../TextRing/TextRing";
 import {ListIcon} from "@phosphor-icons/react";
+import {useNavigate} from "react-router-dom";
 
 const Menu = () => {
+  const menuRef = useRef(null);
     const [active, setActive] = useState(false);
+    const navigate = useNavigate();
 
     const toggleActive = () => {
         setActive(!active);
     }
 
+    useEffect(() => {
+      window.addEventListener('click', e => {
+        if (menuRef.current && !menuRef.current.contains(e.target)) {
+          setActive(false);
+        }
+      })
+    })
+
     return (
-      <div className={`${styles.Menu}${active ? ' ' + styles.active : ''}`}>
-          <div className={styles.inner}>
-              <div className={`${styles.circle} ${styles.trigger}`} onClick={toggleActive} onMouseEnter={() => setActive(true)}>
+      <div ref={menuRef} className={`${styles.Menu}${active ? ' ' + styles.active : ''}`}>
+          <div className={styles.inner} onClick={toggleActive}>
+              <div className={`${styles.circle} ${styles.trigger}`}>
                   <ListIcon size={36}></ListIcon>
               </div>
-              <div className={`${styles.circle} ${styles.circle1}`} onMouseEnter={() => setActive(true)}></div>
-              <div className={`${styles.circle} ${styles.circle2}`} onMouseEnter={() => setActive(true)}></div>
-              <div className={`${styles.circle} ${styles.circle3}`} onMouseEnter={() => setActive(true)}></div>
-              <div className={`${styles.circle} ${styles.circle4}`} onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}></div>
+              <div onClick={() => navigate('/')} className={`${styles.circle} ${styles.circle1}`}></div>
+              <div onClick={() => navigate('/pics')} className={`${styles.circle} ${styles.circle2}`}></div>
+              <div onClick={() => navigate('/portfolio')} className={`${styles.circle} ${styles.circle3}`}></div>
+              <div onClick={() => navigate('/contact')} className={`${styles.circle} ${styles.circle4}`}></div>
               <div>
                   <TextRing text="Home" key="menu-item-home" targetLength={12} spacing="1.35ch" rotationSpeed="16s" direction={-1} initialRotation="54deg"></TextRing>
                   <TextRing text="Pictures" key="menu-item-pics" targetLength={42} spacing="0.95ch" rotationSpeed="18s" direction={1} initialRotation="-24deg"></TextRing>

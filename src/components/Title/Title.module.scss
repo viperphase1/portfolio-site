@@ -1,0 +1,77 @@
+.Title {
+  position:fixed;
+  top:75px;
+  left:75px;
+  color:white;
+  > * {
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  .circleInner, .circleOuter {
+    transform: translate(-50%, -50%);
+    border-radius:50%;
+  }
+  .circleInner {
+    width:50px;
+    height:50px;
+    background-color: var(--primary);
+    z-index:2;
+  }
+  .circleOuter {
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    background-color: var(--accent1);
+    animation: spin 10s infinite linear;
+    z-index:1;
+    .outline {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      height:75px;
+      width:75px;
+      border:1px solid white;
+      border-radius:50%;
+    }
+    .dot1, .dot2 {
+      background-color: white;
+      width:5px;
+      height:5px;
+      border:10px solid var(--accent1);
+      border-radius:50%;
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    .dot1 {
+      left:0;
+    }
+    .dot2 {
+      right:0;
+    }
+  }
+  .capsule {
+    font-size:36px;
+    font-weight:500;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:right;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: var(--accent2);
+    padding:0 40px 0 70px;
+    transform: translateY(-50%);
+    left:0;
+    white-space:nowrap;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

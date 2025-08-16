@@ -3,7 +3,7 @@
 }
 
 :root {
-  --primary: #700000;
+  --primary: rgb(112, 0, 0);
   --accent1: #800000;
   --accent2: #900000;
   --accent3: #a00000;
@@ -12,6 +12,30 @@
   --dark-neutral: #1E1E1E;
 }
 
-body {
+body, html, #root {
   overflow:hidden;
+  width:100%;
+  height:100%;
+}
+
+.scroll-area {
+  width:100%;
+  height:100%;
+  overflow-y:auto;
+  position:relative;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+  &::-webkit-scrollbar {
+    display: none;  /* Older Safari and Chromium */
+  }
+}
+
+.flipY {
+  transform: scaleY(-1);
+}
+
+.divider {
+  width:100%;
+  height:1px;
+  background-color: var(--dark-neutral);
 }

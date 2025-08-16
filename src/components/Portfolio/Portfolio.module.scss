@@ -1,0 +1,72 @@
+.Portfolio {
+  width:100%;
+  height:100%;
+  position:relative;
+  color: var(--dark-neutral);
+  .background {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0.7;
+    background-image: url(../../assets/subtle-prism.svg);
+  }
+  .title {
+    text-align:center;
+    margin:0 auto;
+    padding:100px 0;
+    img {
+      width:300px;
+    }
+    h1 {
+      margin-top:0;
+      font-size:64px;
+      font-weight:bold;
+      color:var(--primary);
+      margin-bottom:20px;
+    }
+    p {
+      max-width:600px;
+      color:var(--dark-neutral);
+      margin:0 auto;
+      font-size:20px;
+      font-weight:bold;
+    }
+  }
+  .Section {
+    &:nth-of-type(2n) {
+      > div > div {
+        flex-direction:row-reverse;
+      }
+    }
+    &:nth-of-type(3n) {
+      background-color: #700000CC;
+      color:var(--light-neutral);
+      :global(.divider) {
+        background-color: var(--light-neutral);
+      }
+      a {
+        background-color: var(--light-neutral) !important;
+        color:var(--primary) !important;
+        &:hover {
+          background-color: #d6d6d6 !important;
+        }
+      }
+    }
+    &:nth-of-type(3n+1) {
+      background-color: var(--dark-neutral);
+      color:var(--light-neutral);
+      :global(.divider) {
+        background-color: var(--light-neutral);
+      }
+    }
+    &:nth-of-type(3n+2) {
+      background-color: var(--light-neutral);
+      color:var(--dark-neutral);
+      img {
+        border:1px solid var(--dark-neutral);
+      }
+    }
+  }
+}
