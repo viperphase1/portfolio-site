@@ -21,7 +21,7 @@ const Home = () => {
         const directionalLight = new DirectionalLight(0xffffff, 0.5);
         scene.add(ambientLight);
         scene.add(directionalLight);
-        const camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new PerspectiveCamera(60, canvasRef.current.clientWidth / canvasRef.current.clientHeight, 0.1, 1000);
         const initialScale = new Vector3(.001, .001, .001);
         const explodeDuration = 400;
 
@@ -33,7 +33,7 @@ const Home = () => {
           scene.add(loadedGroup);
 
           const renderer = new WebGLRenderer({canvas: canvasRef.current, alpha: true, antialias: true});
-          renderer.setSize(window.innerWidth, window.innerHeight);
+          renderer.setSize(renderer.domElement.clientWidth, renderer.domElement.clientHeight);
           const orbitControls = new OrbitControls(camera, renderer.domElement);
           camera.position.set(0, 0, 25);
           orbitControls.autoRotate = true;
@@ -74,9 +74,9 @@ const Home = () => {
           window.addEventListener('touchstart', stopAutoRotate);
 
           window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(renderer.domElement.clientWidth, renderer.domElement.clientHeight);
           })
 
         });

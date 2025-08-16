@@ -43,4 +43,12 @@
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    > .inner {
+      display:block;
+      > * {
+        padding:20px 40px;
+      }
+    }
+  }
 }

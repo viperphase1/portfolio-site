@@ -5,32 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443a09e0-79ab-4194-a513-0cae6ef5373a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/byu-medallion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/cms-assets.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/cms-xp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/comic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/composer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/composer2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/configurator1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/configurator2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/disco-defense.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/from-concentrate.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/inspector-complex.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/inspector.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/juiceman-cometh.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/marathon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/portfolio-graphic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/second-gulp.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/seek-studio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/seek-studio2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/subtle-prism.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Title/Title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Title/Title.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Menu.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.alt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.alt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section/Section.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section/Section.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +106,7 @@
       <workItem from="1755135722362" duration="97000" />
       <workItem from="1755157053754" duration="12000" />
       <workItem from="1755160572986" duration="6000" />
-      <workItem from="1755301839858" duration="19512000" />
+      <workItem from="1755301839858" duration="20464000" />
     </task>
     <servers />
   </component>
