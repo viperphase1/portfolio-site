@@ -32,10 +32,10 @@ const Menu = () => {
               <div onClick={() => navigate('/portfolio')} className={`${styles.circle} ${styles.circle3}`}></div>
               <div onClick={() => navigate('/contact')} className={`${styles.circle} ${styles.circle4}`}></div>
               <div>
-                  <TextRing text="Home" key="menu-item-home" targetLength={12} spacing="1.35ch" rotationSpeed="16s" direction={-1} initialRotation="54deg"></TextRing>
-                  <TextRing text="Pictures" key="menu-item-pics" targetLength={42} spacing="0.95ch" rotationSpeed="18s" direction={1} initialRotation="-24deg"></TextRing>
-                  <TextRing text="Portfolio" key="menu-item-portfolio" targetLength={54} spacing="1.07ch" rotationSpeed="24s" direction={-1} initialRotation="254deg"></TextRing>
-                  <TextRing text="Contact Info •" key="menu-item-contact" targetLength={64} spacing="1.14ch" rotationSpeed="24s" direction={1} initialRotation="-100deg"></TextRing>
+                  <TextRing text="Home" key="menu-item-home" targetLength={12} spacing="24px" rotationSpeed="16s" direction={-1} initialRotation="54deg"></TextRing>
+                  <TextRing text="Pictures" key="menu-item-pics" targetLength={42} spacing="16.5px" rotationSpeed="18s" direction={1} initialRotation="-24deg"></TextRing>
+                  <TextRing text="Portfolio" key="menu-item-portfolio" targetLength={54} spacing="19px" rotationSpeed="24s" direction={-1} initialRotation="254deg"></TextRing>
+                  <TextRing text="Contact Info •" key="menu-item-contact" targetLength={64} spacing="20.25px" rotationSpeed="24s" direction={1} initialRotation="-100deg"></TextRing>
               </div>
           </div>
       </div>
