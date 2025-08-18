@@ -1,0 +1,125 @@
+ .Pics {
+    width:100%;
+    height:100%;
+
+   .background {
+     position:absolute;
+     top:0;
+     left:0;
+     width:100%;
+     height:100%;
+     opacity:0.7;
+     background-image: url(../../assets/subtle-prism.svg);
+   }
+
+   .page {
+     width: 100%;
+     min-height: 100vh;
+     padding: 50px 24px 48px;
+     box-sizing: border-box;
+     color: var(--dark-neutral);
+   }
+
+  .title {
+    text-align: center;
+    margin: 0 auto 50px;
+    h1 {
+      margin: 0 0 8px;
+      font-size: 48px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    p {
+      margin: 0 auto;
+      max-width: 400px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  /* Masonry grid using CSS columns */
+  .grid {
+    column-gap: 16px;
+
+    /* responsive column counts */
+    column-count: 1;
+    @media (min-width: 560px) { column-count: 2; }
+    @media (min-width: 900px) { column-count: 3; }
+    @media (min-width: 1280px) { column-count: 4; }
+  }
+
+  .tile {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    margin: 0 0 16px;
+    overflow: hidden;
+    background: var(--light-neutral);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    cursor: pointer;
+
+    .inner {
+      padding: 40px 40px 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      margin-top:20px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  /* Modal styles */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  .modal {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    background: #ffffff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+}

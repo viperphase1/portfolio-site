@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443a09e0-79ab-4194-a513-0cae6ef5373a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-bathroom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-chin-fuzz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-dishes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-dj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-golf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-long-hair.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-mall.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-sand-dunes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-smash-bros.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-swashbuckler.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-temple.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-tennis.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +44,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/thomas/portfolio/public/images",
+    "last_opened_file_path": "/home/thomas/portfolio/public/images/photos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/photos" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/models" />
@@ -102,7 +117,7 @@
       <workItem from="1755135722362" duration="97000" />
       <workItem from="1755157053754" duration="12000" />
       <workItem from="1755160572986" duration="6000" />
-      <workItem from="1755301839858" duration="21102000" />
+      <workItem from="1755301839858" duration="24960000" />
     </task>
     <servers />
   </component>
