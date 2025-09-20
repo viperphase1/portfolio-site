@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443a09e0-79ab-4194-a513-0cae6ef5373a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-bathroom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-chin-fuzz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-dishes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-dj.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-golf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-long-hair.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-mall.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-sand-dunes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-smash-bros.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-swashbuckler.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-temple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/photos/tom-tennis.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/models/tom-hold-pose.glb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +34,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/thomas/portfolio/public/images/photos",
+    "last_opened_file_path": "/home/thomas/url-shortener",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,10 +48,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/models" />
       <recent name="$PROJECT_DIR$/public/images/photos" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/models" />
       <recent name="$PROJECT_DIR$/public/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -96,7 +86,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-WS-252.25557.126" />
       </set>
     </attachedChunks>
   </component>
@@ -118,6 +108,14 @@
       <workItem from="1755157053754" duration="12000" />
       <workItem from="1755160572986" duration="6000" />
       <workItem from="1755301839858" duration="24960000" />
+      <workItem from="1755532424116" duration="628000" />
+      <workItem from="1755649010535" duration="605000" />
+      <workItem from="1755798894372" duration="598000" />
+      <workItem from="1756250342366" duration="1244000" />
+      <workItem from="1756831696478" duration="54000" />
+      <workItem from="1757009327865" duration="1410000" />
+      <workItem from="1757731846375" duration="599000" />
+      <workItem from="1757968545863" duration="4497000" />
     </task>
     <servers />
   </component>

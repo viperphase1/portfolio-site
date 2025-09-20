@@ -1,41 +1,53 @@
 import React, {useEffect, useRef} from 'react';
 import styles from './Home.module.scss';
 import {
-  AmbientLight,
-  DirectionalLight,
-  PerspectiveCamera,
-  Scene,
-  WebGLRenderer,
   Vector3
 } from 'three';
-import {OrbitControls} from "three/addons";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from "three/addons";
+import {applyWhiteningToModel, newScene, origin} from "../../three-utils";
 
 const Home = () => {
-  const canvasRef = useRef(null);
+  const pageRef = useRef(null);
 
   useEffect(() => {
-      if (canvasRef.current) {
-        const scene = new Scene();
-        const ambientLight = new AmbientLight(0xffffff, 0.5);
-        const directionalLight = new DirectionalLight(0xffffff, 0.5);
-        scene.add(ambientLight);
-        scene.add(directionalLight);
-        const camera = new PerspectiveCamera(60, canvasRef.current.clientWidth / canvasRef.current.clientHeight, 0.1, 1000);
+      if (pageRef.current) {
+        const [wordScene, wordRenderer, wordCamera] = newScene();
+        const [avatarScene, avatarRenderer, avatarCamera] = newScene();
+        pageRef.current.appendChild(avatarRenderer.domElement);
+        pageRef.current.appendChild(wordRenderer.domElement);
+
+        const loader = new GLTFLoader();
+
+        // load and initialize word sphere
         const initialScale = new Vector3(.001, .001, .001);
         const explodeDuration = 400;
 
-        const loader = new GLTFLoader();
-        loader.load('/models/wordsphere2.glb', (gltf) => {
-          // Assuming gltf.scene contains your loaded sphere group
-          const loadedGroup = gltf.scene;
-          loadedGroup.scale.copy(initialScale);
-          scene.add(loadedGroup);
+        const loads = [];
 
-          const renderer = new WebGLRenderer({canvas: canvasRef.current, alpha: true, antialias: true});
-          renderer.setSize(renderer.domElement.clientWidth, renderer.domElement.clientHeight);
-          const orbitControls = new OrbitControls(camera, renderer.domElement);
-          camera.position.set(0, 0, 25);
+        loads.push(new Promise((resolve, reject) => {
+          loader.load('/models/wordsphere2.glb', (gltf) => {
+            // Assuming gltf.scene contains your loaded sphere group
+            const wordSphere = gltf.scene;
+            wordSphere.scale.copy(initialScale);
+            wordScene.add(wordSphere);
+            resolve(wordSphere);
+          });
+        }))
+
+        loads.push(new Promise((resolve, reject) => {
+          loader.load('/models/avatar-pose3.glb', gltf => {
+            const avatar = gltf.scene;
+            applyWhiteningToModel(avatar);
+            avatar.scale.set(100,100,100);
+            avatarScene.add(avatar);
+            resolve(avatar);
+          })
+        }));
+
+        Promise.all(loads).then(results => {
+          const orbitControls = new OrbitControls(wordCamera, wordRenderer.domElement);
+          wordCamera.position.set(0, 0, 25);
           orbitControls.autoRotate = true;
           orbitControls.enableDamping = true;
           orbitControls.update();
@@ -53,8 +65,19 @@ const Home = () => {
 
               t = 1 - Math.pow(1 - t, 3); // cubic ease-out
 
-              loadedGroup.scale.copy(initialScale.clone().lerp(new Vector3(1,1,1), t))
+              results[0].scale.copy(initialScale.clone().lerp(new Vector3(1,1,1), t))
             }
+
+            results[1].traverse((child) => {
+              if (child.isMesh) {
+                const mats = Array.isArray(child.material) ? child.material : [child.material];
+                mats.forEach((mat) => {
+                  if (mat.userData.shader) {
+                    mat.userData.shader.uniforms.cameraPos.value.copy(avatarCamera.position);
+                  }
+                });
+              }
+            });
 
             if (orbitControls.autoRotate || orbitControls.enableDamping) {
               orbitControls.update();
@@ -62,7 +85,10 @@ const Home = () => {
 
             requestAnimationFrame( animate );
 
-            renderer.render( scene, camera );
+            avatarCamera.position.set(0, 0, wordCamera.position.distanceTo(origin));
+
+            wordRenderer.render( wordScene, wordCamera );
+            avatarRenderer.render( avatarScene, avatarCamera );
 
           }
 
@@ -72,21 +98,13 @@ const Home = () => {
           window.addEventListener('mousedown', stopAutoRotate);
           window.addEventListener('wheel', stopAutoRotate);
           window.addEventListener('touchstart', stopAutoRotate);
-
-          window.addEventListener('resize', () => {
-            camera.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(renderer.domElement.clientWidth, renderer.domElement.clientHeight);
-          })
-
-        });
+        })
 
       }
-  }, [canvasRef])
+  }, [pageRef])
 
   return (
-    <div className={styles.Home}>
-      <canvas ref={canvasRef}></canvas>
+    <div className={styles.Home} ref={pageRef}>
     </div>
   );
 };
